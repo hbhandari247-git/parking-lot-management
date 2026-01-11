@@ -1,0 +1,85 @@
+{
+  "info": {
+    "name": "Parking Lot Management APIs",
+    "description": "Postman collection for testing Parking Lot Management System built with Django REST Framework",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "ticket_id",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/health/",
+          "host": ["{{base_url}}"],
+          "path": ["api", "health", ""]
+        }
+      }
+    },
+    {
+      "name": "Vehicle Entry",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"vehicle_number\": \"DL01PM1234\",\n  \"vehicle_type\": \"CAR\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/entry/",
+          "host": ["{{base_url}}"],
+          "path": ["api", "entry", ""]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "pm.environment.set(\"ticket_id\", jsonData.ticket_id);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vehicle Exit",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"ticket_id\": {{ticket_id}}\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/exit/",
+          "host": ["{{base_url}}"],
+          "path": ["api", "exit", ""]
+        }
+      }
+    }
+  ]
+}

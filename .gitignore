@@ -1,0 +1,79 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# =========================
+# Virtual Environment
+# =========================
+venv/
+.env/
+.env.*
+.venv/
+
+# =========================
+# Django
+# =========================
+db.sqlite3
+*.sqlite3
+staticfiles/
+media/
+
+# Migrations (optional)
+# Uncomment ONLY if interviewer allows
+# **/migrations/*.py
+# !**/migrations/__init__.py
+
+# =========================
+# Django secrets
+# =========================
+.env
+.env.local
+.env.production
+.env.dev
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# VS Code / IDE
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# PyCharm
+# =========================
+.idea/
+
+# =========================
+# Test / Coverage
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# =========================
+# Build / Distribution
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Node (if frontend added later)
+# =========================
+node_modules/
