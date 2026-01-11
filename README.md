@@ -121,7 +121,7 @@ Request:
 
 ## 👨‍💻 Author
 
-Himanshu Bhandari  
+Deepanshu Bhandari  
 Backend Developer | Python | Django
 
 ---
